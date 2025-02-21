@@ -8,7 +8,6 @@ import superjson from 'superjson'
 import { test } from './test.ts'
 
 import type { AppRouter } from './router.ts'
-import { App } from './app.tsx'
 
 const mswTrpc = createTRPCMsw<AppRouter>({
   transformer: { input: superjson, output: superjson },
@@ -32,6 +31,8 @@ const MockedProviders = (props: PropsWithChildren) => {
 
 describe('basics', () => {
   test('should render', async () => {
+    const { App } = await import('./app.tsx')
+
     render(<App />, { wrapper: MockedProviders })
 
     const div = page.getByText('Hello')
@@ -45,6 +46,8 @@ describe('basics', () => {
         return { id: input, name: 'Tutu' }
       })
     )
+
+    const { App } = await import('./app.tsx')
 
     render(<App />, { wrapper: MockedProviders })
 

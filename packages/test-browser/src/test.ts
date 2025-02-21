@@ -8,8 +8,13 @@ export const test = testBase.extend<{ worker: SetupWorker }>({
   worker: [
     async ({}, use) => {
       await worker.start({
-        quiet: process.env.CI === 'true',
-        onUnhandledRequest: 'error',
+        onUnhandledRequest(req, print) {
+          if (req.url.includes('/src/') || req.url.includes('/node_modules/')) {
+            return
+          }
+          
+          print.error()
+        },
       })
       await use(worker)
       worker.stop()
