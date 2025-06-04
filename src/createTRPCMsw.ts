@@ -32,7 +32,6 @@ const getRegexpAsString = (baseUrl: string | RegExp) => {
 
 const buildUrlFromPathParts = (pathParts: string[]) => new RegExp(pathParts.map(getRegexpAsString).join('[/.|.]') + '$')
 
-// @ts-expect-error any
 const createUntypedTRPCMsw = (
   {
     baseUrl,

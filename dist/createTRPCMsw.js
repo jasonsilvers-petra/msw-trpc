@@ -36,7 +36,6 @@ const getRegexpAsString = (baseUrl) => {
     return baseUrlAsString;
 };
 const buildUrlFromPathParts = (pathParts) => new RegExp(pathParts.map(getRegexpAsString).join('[/.|.]') + '$');
-// @ts-expect-error any
 const createUntypedTRPCMsw = ({ baseUrl, basePath = 'trpc', transformer = unstable_core_do_not_import_1.defaultTransformer, } = {}, pathParts = []) => {
     return new Proxy({}, {
         get(_target, procedureKey) {

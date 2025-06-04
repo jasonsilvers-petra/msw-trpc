@@ -1,6 +1,6 @@
 {
   "name": "msw-trpc",
-  "version": "2.0.0-beta.1",
+  "version": "3.0.0",
   "description": "Trpc API for Mock Service Worker (MSW).",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maloguertin/msw-trpc.git"
+    "url": "git+https://github.com/jasonsilvers-petra/msw-trpc"
   },
   "keywords": [
     "msw",
@@ -20,16 +20,16 @@
     "testing",
     "api"
   ],
-  "author": "Malo Guertin",
+  "author": "Jason Silver",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/maloguertin/msw-trpc/issues"
+    "url": "https://github.com/jasonsilvers-petra/msw-trpc/issues"
   },
-  "homepage": "https://github.com/maloguertin/msw-trpc#readme",
+  "homepage": "https://github.com/jasonsilvers-petra/msw-trpc#readme",
   "devDependencies": {
-    "@trpc/client": "11.0.0-rc.351",
-    "@trpc/react-query": "11.0.0-rc.351",
-    "@trpc/server": "11.0.0-rc.351",
+    "@trpc/client": "^11.0.0",
+    "@trpc/react-query": "^11.0.0",
+    "@trpc/server": "^11.0.0",
     "msw": "^2.2.14",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
@@ -39,7 +39,7 @@
     "zod": "^3.23.4"
   },
   "peerDependencies": {
-    "@trpc/server": ">=11.0.0-rc.351",
+    "@trpc/server": ">=11.0.0",
     "msw": "^2.2.14"
   }
 }

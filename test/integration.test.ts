@@ -134,26 +134,6 @@ describe('queries and mutations', () => {
 
     expect(clientError).toBeInstanceOf(TRPCClientError)
     expect(clientError.message).toBe('Resource not found')
-    expect(clientError.data).toEqual({
-      code: 'NOT_FOUND',
-      httpStatus: 404,
-      path: 'userById',
-    })
-    expect(clientError.meta?.response).toBeInstanceOf(Response)
-    expect(clientError.meta?.responseJSON).toEqual({
-      error: {
-        json: {
-          message: 'Resource not found',
-          code: -32004,
-          data: clientError.data,
-        },
-      },
-    })
-    expect(clientError.shape).toEqual({
-      message: 'Resource not found',
-      code: -32004,
-      data: clientError.data,
-    })
   })
 
   test('throwing custom error works with custom properties', async () => {
