@@ -4,7 +4,6 @@
   "description": "Trpc API for Mock Service Worker (MSW).",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "scripts": {
     "test": "tsc --noEmit && vitest --run",
     "build": "rimraf dist && tsc -p tsconfig.build.json",
@@ -20,7 +19,7 @@
     "testing",
     "api"
   ],
-  "author": "Jason Silver",
+  "author": "Jason Silvers",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jasonsilvers-petra/msw-trpc/issues"
